@@ -45,4 +45,18 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $error)
+    {
+
+        if ($error instanceof AppError) {
+            return response()->json([
+                'errors' => $error->getMessage()
+            ], $error->getCode());
+        }
+
+        return response()->json([
+            'message' => 'Internal server error.'
+        ], 500);
+    }
 }

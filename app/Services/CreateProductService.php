@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
+use App\Exceptions\AppError;
 use App\Models\Products;
-use Error;
 
 class CreateProductService
 {
@@ -12,7 +12,7 @@ class CreateProductService
         $productFound = Products::firstWhere('name', $data['name']);
 
         if (!is_null($productFound)) {
-            throw new Error('Product already exists.');
+            throw new AppError('Product already exists.', 400);
         }
 
         return Products::create($data);
