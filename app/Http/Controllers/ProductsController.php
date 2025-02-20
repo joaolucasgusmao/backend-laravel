@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Services\StoreProductService;
 use App\Services\GetProductsService;
+use App\Services\UpdateProductService;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    public function store(StoreProductRequest $request)
+    {
+        $storeProductService = new StoreProductService();
+        return $storeProductService->execute($request->all());
+    }
 
     public function getProducts(Request $request)
     {
@@ -16,9 +22,9 @@ class ProductsController extends Controller
         return $getProductsService->execute($request->all());
     }
 
-    public function store(StoreProductRequest $request)
+    public function update(Request $request, $id)
     {
-        $storeProductService = new StoreProductService();
-        return $storeProductService->execute($request->all());
+        $updateProductService = new UpdateProductService();
+        return $updateProductService->execute($request->all(), $id);
     }
 }
