@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
-use App\Services\CreateProductService;
+use App\Http\Requests\StoreProductRequest;
+use App\Services\StoreProductService;
 use App\Services\GetProductsService;
 use Illuminate\Http\Request;
 
@@ -16,9 +16,9 @@ class ProductsController extends Controller
         return $getProductsService->execute($request->all());
     }
 
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        $createProductService = new CreateProductService();
-        return $createProductService->execute($request->all());
+        $storeProductService = new StoreProductService();
+        return $storeProductService->execute($request->all());
     }
 }
