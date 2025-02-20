@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
+use App\Services\DestroyProductService;
 use App\Services\StoreProductService;
 use App\Services\GetProductsService;
 use App\Services\UpdateProductService;
@@ -26,5 +27,11 @@ class ProductsController extends Controller
     {
         $updateProductService = new UpdateProductService();
         return $updateProductService->execute($request->all(), $id);
+    }
+
+    public function destroy($id)
+    {
+        $destroyProductService = new DestroyProductService();
+        return $destroyProductService->execute($id);
     }
 }
