@@ -17,11 +17,11 @@ Para instalar e executar a API, siga os passos abaixo:
 
 1. Clone o repositório:
    ```bash
-   $ git clone https://github.com/seu-usuario/products-api.git
+   $ git clone https://github.com/joaolucasgusmao/products_api.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   $ cd products-api
+   $ cd products_api
    ```
 3. Copie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente:
    ```bash
