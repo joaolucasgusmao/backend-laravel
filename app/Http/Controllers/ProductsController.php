@@ -9,6 +9,7 @@ use App\Services\StoreProductService;
 use App\Services\GetProductsService;
 use App\Services\UpdateProductService;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProductsController extends Controller
 {
@@ -40,5 +41,7 @@ class ProductsController extends Controller
     {
         $destroyProductService = new DestroyProductService();
         $destroyProductService->execute($id);
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
