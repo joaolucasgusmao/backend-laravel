@@ -17,10 +17,10 @@ class ProductsController extends Controller
         return $storeProductService->execute($request->all());
     }
 
-    public function getProducts(Request $request)
+    public function getProducts()
     {
         $getProductsService = new GetProductsService();
-        return $getProductsService->execute($request->all());
+        return $getProductsService->execute();
     }
 
     public function update(Request $request, $id)
@@ -32,6 +32,6 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $destroyProductService = new DestroyProductService();
-        return $destroyProductService->execute($id);
+        $destroyProductService->execute($id);
     }
 }
