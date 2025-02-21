@@ -17,15 +17,15 @@ Para instalar e executar a API, siga os passos abaixo:
 
 1. Clone o repositório:
    ```bash
-   $ git clone https://github.com/joaolucasgusmao/products_api.git
+   git clone https://github.com/joaolucasgusmao/products_api.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   $ cd products_api
+   cd products_api
    ```
 3. Copie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente:
    ```bash
-   $ cp .env.example .env
+   cp .env.example .env
    ```
 4. Copie e cole as seguintes variáveis de ambiente no arquivo `.env`:
    ```env
@@ -49,19 +49,19 @@ Para instalar e executar a API, siga os passos abaixo:
    ```
 5. Suba os containers Docker:
    ```bash
-   $ docker-compose up -d
+   docker-compose up -d
    ```
 6. Acesse o container da aplicação:
    ```bash
-   $ docker-compose exec app bash
+   docker-compose exec app bash
    ```
 7. Gere a chave da aplicação Laravel:
    ```bash
-   $ php artisan key:generate
+   php artisan key:generate
    ```
 8. Execute as migrações do banco de dados:
    ```bash
-   $ php artisan migrate
+   php artisan migrate
    ```
 
 A API estará disponível em `http://localhost:8989`.
