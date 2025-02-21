@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Services\DestroyProductService;
+use App\Services\RetrieveProductService;
 use App\Services\StoreProductService;
 use App\Services\GetProductsService;
 use App\Services\UpdateProductService;
@@ -21,6 +22,12 @@ class ProductsController extends Controller
     {
         $getProductsService = new GetProductsService();
         return $getProductsService->execute();
+    }
+
+    public function retrieveProduct($id)
+    {
+        $retrieveProductService = new RetrieveProductService();
+        return $retrieveProductService->execute($id);
     }
 
     public function update(Request $request, $id)
