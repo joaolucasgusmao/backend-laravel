@@ -29,15 +29,7 @@ Para instalar e executar a API, siga os passos abaixo:
    ```
 4. Copie e cole as seguintes variáveis de ambiente no arquivo `.env`:
    ```env
-   APP_NAME="Laravel"
    APP_URL=http://localhost:8989
-
-   DB_CONNECTION=mysql
-   DB_HOST=db
-   DB_PORT=3306
-   DB_DATABASE=laravel
-   DB_USERNAME=root
-   DB_PASSWORD=root
 
    CACHE_DRIVER=redis
    QUEUE_CONNECTION=redis
@@ -55,6 +47,10 @@ Para instalar e executar a API, siga os passos abaixo:
    ```bash
    docker-compose exec app bash
    ```
+   6. Instale as dependências:
+   ```bash
+   composer install
+   ```
 7. Gere a chave da aplicação Laravel:
    ```bash
    php artisan key:generate
@@ -63,8 +59,6 @@ Para instalar e executar a API, siga os passos abaixo:
    ```bash
    php artisan migrate
    ```
-
-A API estará disponível em `http://localhost:8989`.
 
 ## Endpoints
 
