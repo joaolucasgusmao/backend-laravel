@@ -47,7 +47,7 @@ Para instalar e executar a API, siga os passos abaixo:
    ```bash
    docker-compose exec app bash
    ```
-   6. Instale as dependências:
+6. Instale as dependências:
    ```bash
    composer install
    ```
