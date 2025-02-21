@@ -8,6 +8,6 @@ class GetProductsService
 {
     public function execute()
     {
-        return Products::all();
+        return Products::orderBy('id', 'asc')->get();
     }
 }
